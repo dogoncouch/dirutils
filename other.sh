@@ -23,6 +23,7 @@
 #_SOFTWARE.
 #_
 
+OURCMD=${@}
 GOTHERE=0
 RECURSIVE=0
 MAXDEPTH=1
@@ -50,5 +51,5 @@ if [ ${RECURSIVE} ]; then
     fi
 else
     # Not recursive: max depth of 1:
-    find . -mindepth 1 -maxdepth 1 -type d -exec $SHELL -c 'cd "$1" && echo && echo -e "==== \e[94m\e[1m./${D}\e[0m:" && "${@}"' - {} \;
+    find . -mindepth 1 -maxdepth 1 -type d -exec $SHELL -c 'cd "$1" && echo && echo -e "==== \e[94m\e[1m./${D}\e[0m:" && "${OURCMD}"' - {} \;
 fi
