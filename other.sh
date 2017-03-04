@@ -38,29 +38,17 @@ while getopts ":d:r" o; do
             ;;
     esac
 done
-# shift $(expr $OPTIND - 1)
 # shift $((OPTIND-1))
 
 if [ ${RECURSIVE} ]; then
     if [ ${GOTHERE} ]; then
-        OURDIRS=eval find . -mindepth 1 -maxdepth ${MAXDEPTH} -type d
-        # for f in [ eval find . -mindepth 1 -maxdepth ${MAXDEPTH} -type d ]; do
-        #     ( cd ${f} && $1 )
-        # done
+        # If a max depth has been specified:
+        find . -mindepth 1 -maxdepth ${MAXDEPTH} -type d -exec ${SHELL} -c 'cd "$1" && echo && echo -e "==== \e[94m\e[1m./${D}\e[0m:" && "${@}"' - {} \;
     else
-        OURDIRS=eval find . -mindepth 1 -type d
-        # for f in [ eval find . -mindepth 1 -type d ]; do
-        #     ( cd ${f} && $1 )
-        # done
+        # Recursive with no max depth:
+        find . -mindepth 1 -type d -exec ${SHELL} -c 'cd "$1" && echo && echo -e "==== \e[94m\e[1m./${D}\e[0m:" && "${@}"' - {} \;
     fi
 else
-    OURDIRS=eval find . -mindepth 1 -maxdepth 1 -type d
-    #     ( cd ${f} && $1 )
-    # done
-
-    # find . -mindepth 1 -maxdepth ${MAXDEPTH} -type d -exec bash -c $1
+    # Not recursive: max depth of 1:
+    find . -mindepth 1 -maxdepth 1 -type d -exec $SHELL -c 'cd "$1" && echo && echo -e "==== \e[94m\e[1m./${D}\e[0m:" && "${@}"' - {} \;
 fi
-
-for d in ${OURDIRS}; do
-    cd ${d} && $1
-done
