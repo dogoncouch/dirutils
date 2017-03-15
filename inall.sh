@@ -44,17 +44,17 @@ if [ ${RECURSIVE} ]; then
     if [ ${GOTHERE} ]; then
         # If a max depth has been specified:
         for dir in `find . -mindepth 1 -maxdepth "${MAXDEPTH}" -type d`; do
-            (cd "${dir}" ; echo ; echo -e "==== \e[94m\e[1m${dir}\e[0m:" ; "${OURCMD}")
+            (cd "${dir}" ; echo ; echo -e "==== \e[94m\e[1m${dir}\e[0m:" ; ${OURCMD})
         done
     else
         # Recursive with no max depth:
         for dir in `find . -mindepth 1 -type d`; do
-            (cd "${dir}" ; echo ; echo -e "==== \e[94m\e[1m${dir}\e[0m:" ; "${OURCMD}")
+            (cd "${dir}" ; echo ; echo -e "==== \e[94m\e[1m${dir}\e[0m:" ; ${OURCMD})
         done
     fi
 else
     # Not recursive: max depth of 1:
     for dir in `find . -mindepth 1 -maxdepth 1 -type d`; do
-        (cd "${dir}" ; echo ; echo -e "==== \e[94m\e[1m${dir}\e[0m:" ; "${OURCMD}")
+        (cd "${dir}" ; echo ; echo -e "==== \e[94m\e[1m${dir}\e[0m:" ; ${OURCMD})
     done
 fi
