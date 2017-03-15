@@ -2,7 +2,7 @@
 
 #_MIT License
 #_
-#_Copyright (c) 2017 Dan Persons
+#_Copyright (c) 2017 Dan Persons <dpersonsdev@gmail.com>
 #_
 #_Permission is hereby granted, free of charge, to any person obtaining a copy
 #_of this software and associated documentation files (the "Software"), to deal
@@ -25,7 +25,7 @@
 
 MAXDEPTH=1
 
-while getopts ":d:r" o; do
+while getopts ":h:d:r" o; do
     case "${o}" in
         r)
             RECURSIVE=1

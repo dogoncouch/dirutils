@@ -1,29 +1,15 @@
-.TH LOGSHELL 1
+.TH AT 1
 .SH NAME
-logshell - Log a shell session to a file.
+at - Execute a command from within a specified directory.
 
 .SH SYNOPSIS
-.B logshell [-h] [-c {script|screen}] [-f <logfile>] [-s <shell>] 
+.B at <directory> <command>
 
 .SH DESCRIPTION
-\fBlogshell\fP is a tool for logging shell sessions. It supports terminal colors, different shells, and a few different commands for logging. Cat the log files back later for full color.
-
-.SH KNOWN ISSUE
-Using programs that control the full screen (vim, less, etc) inside the logged shell can corrupt the output file.
-
-.SH OPTIONS
-
-    \fB-h\fP                          Print this help message
-    \fB-c\fP \fI[script|screen]\fR          Command to use (script or screen)
-    \fB-f\fp \fI<logfile>\fR                Output file (try default)
-    \fB-p\fP \fI<logpath>\fR                Output path (do not use with -f)
-    \fB-s\fP \fI<shell>\fR                  Shell to use
+\fBat\fP is a tool for executing a command from within a certain directory.
 
 .SH EXAMPLES
-    logshell
-    logshell -p .
-    logshell -c screen -f mylog.log
-    logshell -s csh
+    at ~/.config git init
 
 .SH AUTHOR
     Dan Persons (dpersonsdev@gmail.com)

@@ -10,17 +10,13 @@ inall - Execute a command in all subdirectories.
 
 .SH OPTIONS
 
-    \fB-h\fP                          Print this help message
-    \fB-c\fP \fI[script|screen]\fR          Command to use (script or screen)
-    \fB-f\fp \fI<logfile>\fR                Output file (try default)
-    \fB-p\fP \fI<logpath>\fR                Output path (do not use with -f)
-    \fB-s\fP \fI<shell>\fR                  Shell to use
+    \fB-r\fP                      Execute recursively
+    \fB-d\fP \fI<depth>\fR              Execute to maximum depth <depth>
 
 .SH EXAMPLES
-    logshell
-    logshell -p .
-    logshell -c screen -f mylog.log
-    logshell -s csh
+    inall du -sh
+    inall git status
+    inall grep -i copyright *.py
 
 .SH AUTHOR
     Dan Persons (dpersonsdev@gmail.com)

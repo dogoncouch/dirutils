@@ -2,7 +2,7 @@
 
 #_MIT License
 #_
-#_Copyright (c) 2017 Dan Persons
+#_Copyright (c) 2017 Dan Persons <dpersonsdev@gmail.com>
 #_
 #_Permission is hereby granted, free of charge, to any person obtaining a copy
 #_of this software and associated documentation files (the "Software"), to deal
@@ -24,5 +24,5 @@
 #_
 
 if [ -d "${1}" ]; then
-    (cd "${1}" && "${2}");
+    (cd "${1}" ; shift ; "${@}");
 fi
