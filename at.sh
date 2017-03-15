@@ -23,33 +23,6 @@
 #_SOFTWARE.
 #_
 
-while getopts ":d:r" o; do
-    case "${o}" in
-        r)
-            RECURSIVE=1
-            ;;
-        d)
-            GOTHERE=1
-            MAXDEPTH= ${OPTARG}
-            ;;
-    esac
-done
-shift $((OPTIND-1))
-
-OURCMD=${@}
-GOTHERE=0
-RECURSIVE=0
-MAXDEPTH=1
-
-if [ ${RECURSIVE} ]; then
-    if [ ${GOTHERE} ]; then
-        # If a max depth has been specified:
-        find . -mindepth 1 -maxdepth ${MAXDEPTH} -type d -exec ${SHELL} -c 'cd "$1" && echo && echo -e "==== \e[94m\e[1m./${D}\e[0m:" && "${@}"' - {} \;
-    else
-        # Recursive with no max depth:
-        find . -mindepth 1 -type d -exec ${SHELL} -c 'cd "$1" && echo && echo -e "==== \e[94m\e[1m./${D}\e[0m:" && "${@}"' - {} \;
-    fi
-else
-    # Not recursive: max depth of 1:
-    find . -mindepth 1 -maxdepth 1 -type d -exec $SHELL -c 'cd "$1" && echo && echo -e "==== \e[94m\e[1m./${D}\e[0m:" && "${OURCMD}"' - {} \;
+if [ -d "${1}" ]; then
+    (cd "${1}" && "${2}");
 fi
