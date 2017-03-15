@@ -23,5 +23,43 @@
 #_SOFTWARE.
 #_
 
+# GOTHERE=0
+# RECURSIVE=0
+MAXDEPTH=1
 
-for D in *; do if [ -d "${D}" ]; then (cd "${D}" && echo && echo -e "==== \e[94m\e[1m./${D}\e[0m:" && "${@}"); fi; done
+while getopts ":d:r" o; do
+    case "${o}" in
+        r)
+            RECURSIVE=1
+            ;;
+        d)
+            GOTHERE=1
+            MAXDEPTH=${OPTARG}
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+
+OURCMD=${@}
+
+if [ ${RECURSIVE} ]; then
+    if [ ${GOTHERE} ]; then
+        # If a max depth has been specified:
+        for dir in `find . -mindepth 1 -maxdepth "${MAXDEPTH}" -type d`; do
+            (cd "${dir}" ; echo ; echo -e "==== \e[94m\e[1m${dir}\e[0m:" ; "${OURCMD}")
+        done
+        # find . -mindepth 1 -maxdepth ${MAXDEPTH} -type d -exec ${SHELL} -c 'cd "$1" && echo && echo -e "==== \e[94m\e[1m./${D}\e[0m:" && "${@}"' - {} \;
+    else
+        # Recursive with no max depth:
+        for dir in `find . -mindepth 1 -type d`; do
+            (cd "${dir}" ; echo ; echo -e "==== \e[94m\e[1m${dir}\e[0m:" ; "${OURCMD}")
+        done
+        # find . -mindepth 1 -type d -exec ${SHELL} -c 'cd "$1" && echo && echo -e "==== \e[94m\e[1m./${D}\e[0m:" && "${@}"' - {} \;
+    fi
+else
+    # Not recursive: max depth of 1:
+    for dir in `find . -mindepth 1 -maxdepth 1 -type d`; do
+        (cd "${dir}" ; echo ; echo -e "==== \e[94m\e[1m${dir}\e[0m:" ; "${OURCMD}")
+        # (cd "${dir}" && echo && echo -e "==== \e[94m\e[1m./${D}\e[0m:" && "${OURCMD}")
+    done
+fi
