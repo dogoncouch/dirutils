@@ -6,8 +6,8 @@ CLI tools for executing commands in remote directories and subdirectories.
     at - Execute a command from within a specified directory
 
 # Usage:
-    inall i [-r] -[d <depth>] <command>
-(-r executes recursively, -d specifies max depth)
+    inall [-r] -[d <depth>] <command>
+    (-r executes recursively; -d specifies max depth)
     
     at <directory> <command>
 
