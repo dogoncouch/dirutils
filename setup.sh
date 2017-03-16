@@ -31,6 +31,9 @@ if [ -w /usr/local/bin ]; then
         echo Installing documentation
         cp doc/inall.1 /usr/share/man/man1
         cp doc/at.1 /usr/share/man/man1
+        mkdir -p /usr/share/doc/dirutils
+        cp -n README.md /usr/share/doc/dirutils
+        cp -n LICENSE /usr/share/doc/diruils
     else
         echo Documentation not installed - no permissions in /usr/share/man
     fi
@@ -44,6 +47,9 @@ else
         echo Installing documentation
         cp doc/inall.1 /usr/share/man/man1
         cp doc/at.1 /usr/share/man/man1
+        mkdir -p /usr/share/doc/dirutils
+        cp -n README.md /usr/share/doc/dirutils
+        cp -n LICENSE /usr/share/doc/diruils
     else
         echo Documentation not installed - no permissions in /usr/share/man
     fi
