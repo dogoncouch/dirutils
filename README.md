@@ -1,5 +1,5 @@
 # dirutils
-CLI tools for executing commands in remote directories and subdirectories.
+CLI tools for executing commands in subdirectories and specified directories.
 
 # Commands
     inall - Execute a command in all subdirectories of the current working directory
