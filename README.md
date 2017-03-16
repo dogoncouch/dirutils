@@ -6,10 +6,10 @@ CLI tools for executing commands in remote directories and subdirectories.
     at - Execute a command from within a specified directory
 
 # Usage:
-    inall i [-r] -[d &lt;depth&gt;] &lt;command&gt;
+    inall i [-r] -[d <depth>] <command>
 (-r executes recursively, -d specifies max depth)
     
-    at &lt;directory&gt; &lt;command&gt;
+    at <directory> <command>
 
 # Installing
     git clone https://github.com/dogoncouch/dirutils.git
