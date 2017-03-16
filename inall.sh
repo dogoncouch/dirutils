@@ -25,7 +25,7 @@
 
 MAXDEPTH=1
 
-while getopts ":h:d:r" o; do
+while getopts ":d:r" o; do
     case "${o}" in
         r)
             RECURSIVE=1
