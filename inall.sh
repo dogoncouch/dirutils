@@ -39,7 +39,7 @@ done
 shift $((OPTIND-1))
 
 # Set the command to use from arguments
-OURCMD=${@}
+OURCMD="${@}"
 
 # Check for color terminal:
 if [ "$(tput colors)" -ge 256 ]; then
