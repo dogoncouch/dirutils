@@ -17,7 +17,8 @@ CLI tools for executing commands in subdirectories and specified directories.
     sudo ./setup.sh
 
 # Examples
-    inall grep -i copyright *.py
+    inall du -sh
+    inall git status
     at ~/.config git init
 
 # Tips
