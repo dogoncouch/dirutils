@@ -31,8 +31,8 @@ Replace this line in your ~/.bashrc:
 With this:
     
     ls() {
-        ls --color=auto "$@"
+        ls --color=auto "${@}"
     }
     export -f ls
 
-Then your aliases will work with subscripts like inall and at.
+Functions are the new aliases, according to bash's documentation. The `` export -f `` is what makes the function work with subscripts like inall and at.
