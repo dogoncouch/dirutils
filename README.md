@@ -18,7 +18,7 @@ CLI tools for executing commands in subdirectories and specified directories.
 
 # Examples
     inall du -sh
-    inall git status
+    inall git status | more
     at ~/.config git init
 
 # Tips
