@@ -15,8 +15,8 @@ inall - Execute a command in all subdirectories.
 
 .SH EXAMPLES
     inall du -sh
-    inall git status
-    inall grep -i copyright *.py
+    inall git status | more
+    inall -r grep -i copyright *.py
 
 .SH TIPS
 To get the most out of these utilities, it is best to change your bash aliases to functions. Aliases are deprecated.
