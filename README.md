@@ -24,7 +24,7 @@ CLI tools for executing commands in subdirectories and specified directories.
 # Tips
 To get the most out of these utilities, it is best to change your bash aliases to functions. Aliases are deprecated.
 
-Replace this line in your ~/.bashrc:
+Replace this line in your `` ~/.bashrc `` :
     
     alias ls='ls --color=auto'
 
