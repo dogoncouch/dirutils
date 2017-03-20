@@ -7,7 +7,7 @@ CLI tools for executing commands in subdirectories and specified directories.
 
 # Usage:
     inall [-r] [-d <depth>] <command>
-    (-r executes recursively; -d specifies a max depth)
+    (-r executes recursively; -d executes to a max depth)
     
     at <directory> <command>
 
