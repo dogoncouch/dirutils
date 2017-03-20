@@ -31,6 +31,7 @@ while getopts ":d:r" o; do
             RECURSIVE=1
             ;;
         d)
+            RECURSIVE=1
             GOTHERE=1
             MAXDEPTH=${OPTARG}
             ;;
