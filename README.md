@@ -12,9 +12,7 @@ CLI tools for executing commands in subdirectories and specified directories.
     at <directory> <command>
 
 # Installing
-    git clone https://github.com/dogoncouch/dirutils.git
-    cd dirutils
-    sudo ./setup.sh
+See the latest instructions on the [releases page](https://github.com/dogoncouch/dirutils/releases)
 
 # Examples
     inall du -sh

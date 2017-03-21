@@ -23,6 +23,8 @@
 #_SOFTWARE.
 #_
 
+# at v1.0
+
 # To Do: add remote host support with scp (grep for ':' to check)
 
 if [ -d "${1}" ]; then

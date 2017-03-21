@@ -23,6 +23,8 @@
 #_SOFTWARE.
 #_
 
+# inall v1.0
+
 # Set the command line options
 MAXDEPTH=1
 while getopts ":d:r" o; do
