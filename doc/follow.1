@@ -1,0 +1,60 @@
+.TH FOLLOW 1
+.SH NAME
+follow - execute a command every x seconds
+
+.SH SYNOPSIS
+\fBfollow \fP[\fB-d\fR] [\fB-t \fI<seconds>\fR] \fI<command>\fR
+
+.SH DESCRIPTION
+\fBfollow\fP is a tool that follows a command's output by executing it every x seconds
+
+.SH OPTIONS
+    \fB-d\fP                  Show timestamps
+    \fB-t\fP \fI<seconds>\fR        Set execution interval (defaul 1 second)
+
+.SH EXAMPLES
+    follow -t 5 pgrep python
+    follow -d ls -l
+    follow date
+
+.SH TIPS
+To get the most out of these utilities, it is best to change your bash aliases to functions. Aliases are deprecated.
+
+Replace this line in your ~/.bashrc:
+    
+    alias ls='ls --color=auto'
+
+With this:
+    
+    ls() {
+        ls --color=auto "$@"
+    }
+    export -f ls
+
+Then your aliases will work with subscripts like inall and at.
+
+.SH AUTHOR
+Dan Persons (dpersonsdev@gmail.com)
+
+.SH COPYRIGHT
+MIT License
+
+Copyright (c) 2017 Dan Persons
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

@@ -11,6 +11,8 @@ CLI tools for executing commands in subdirectories and specified directories.
     
     at <directory> <command>
 
+    follow [-d] [-t <seconds>] <command>
+
 # Installing
 See the latest instructions on the [releases page](https://github.com/dogoncouch/dirutils/releases)
 
@@ -18,6 +20,8 @@ See the latest instructions on the [releases page](https://github.com/dogoncouch
     inall du -sh
     inall git status | more
     at ~/.config git init
+    follow date
+    follow -d -t 5 ls -l
 
 # Tips
 To get the most out of these utilities, it is best to change your bash aliases to functions. Aliases are deprecated.

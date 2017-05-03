@@ -27,10 +27,12 @@ if [ -w /usr/local/bin ]; then
     echo Write privileges in /usr/local/bin, installing there.
     cp inall.sh /usr/local/bin/inall
     cp at.sh /usr/local/bin/at
+    cp follow.sh /usr/local/bin/follow
     if [ -w /usr/share/man ]; then
         echo Installing documentation
         cp doc/inall.1 /usr/share/man/man1
         cp doc/at.1 /usr/share/man/man1
+        cp doc/follow.1 /usr/share/man/man1
         mkdir -p /usr/share/doc/dirutils
         cp -n README.md /usr/share/doc/dirutils
         cp -n LICENSE /usr/share/doc/diruils
@@ -43,10 +45,12 @@ else
     mkdir -p ~/bin
     cp inall.sh ~/bin/inall
     cp at.sh ~/bin/at
+    cp follow.sh ~/bin/follow
     if [ -w /usr/share/man ];then
         echo Installing documentation
         cp doc/inall.1 /usr/share/man/man1
         cp doc/at.1 /usr/share/man/man1
+        cp doc/follow.1 /usr/share/man/man1
         mkdir -p /usr/share/doc/dirutils
         cp -n README.md /usr/share/doc/dirutils
         cp -n LICENSE /usr/share/doc/diruils
