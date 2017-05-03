@@ -24,16 +24,33 @@
 #_
 
 
+usage() {
+    echo "Usage: ${0##*/} [-h] [-d] [-t <seconds>] <command>"
+    echo
+    echo "Optional arguments:"
+    echo "  -h                      Print this help message"
+    echo "  -d                      Show datestamps"
+    echo "  -t <seconds>            Set execution interval (default 1 second)"
+}
+
 # Set the command line options
 SLEEPTIME=1
 
-while getopts ":dt:" o; do
+while getopts ":hdt:" o; do
     case "${o}" in
         d)
             SHOWDATE=1
             ;;
         t)
             SLEEPTIME=${OPTARG}
+            ;;
+        h)
+            usage
+            exit 0
+            ;;
+        *)
+            usage
+            exit 0
             ;;
     esac
 done

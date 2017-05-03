@@ -25,9 +25,18 @@
 
 # inall v1.0
 
+usage() {
+    echo "Usage: ${0##*/} [-h] [-r] [-d <depth>] <command>"
+    echo
+    echo "Optional arguments:"
+    echo "  -h                      Print this help message"
+    echo "  -r                      Execute recursively"
+    echo "  -d <depth>              Execute to maximum depth <depth>"
+}
+
 # Set the command line options
 MAXDEPTH=1
-while getopts ":d:r" o; do
+while getopts ":rhd:" o; do
     case "${o}" in
         r)
             RECURSIVE=1
@@ -36,6 +45,14 @@ while getopts ":d:r" o; do
             RECURSIVE=1
             GOTHERE=1
             MAXDEPTH=${OPTARG}
+            ;;
+        h)
+            usage
+            exit 0
+            ;;
+        *)
+            usage
+            exit 0
             ;;
     esac
 done

@@ -27,6 +27,25 @@
 
 # To Do: add remote host support with scp (grep for ':' to check)
 
+usage() {
+    echo "Usage: ${0##*/} [-h] <directory> <command>"
+    echo
+    echo "Optional arguments:"
+    echo "  -h                      Print this help message"
+
+while getopts ":h" o; do
+    case "${o}" in
+        h)
+            usage
+            exit 0
+            ;;
+        *)
+            usage
+            exit 0
+            ;;
+    esac
+done
+
 if [ -d "${1}" ]; then
     (cd "${1}" ; shift ; "${@}");
 fi
