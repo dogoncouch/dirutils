@@ -7,12 +7,12 @@ CLI tools for executing commands in subdirectories and specified directories.
     follow - Execute a command at intervals (default 1 second)
 
 # Usage:
-    inall [-r] [-d <depth>] <command>
+    inall [-h] [-r] [-d <depth>] <command>
     (-r executes recursively; -d executes to a max depth)
     
-    at <directory> <command>
+    at [-h] <directory> <command>
 
-    follow [-d] [-t <seconds>] <command>
+    follow [-h] [-d] [-t <seconds>] <command>
 
 # Installing
 See the latest instructions on the [releases page](https://github.com/dogoncouch/dirutils/releases)
