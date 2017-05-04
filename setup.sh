@@ -22,6 +22,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# dirutils v1.1
+
 echo Installing dir-utils
 if [ -w /usr/local/bin ]; then
     echo Write privileges in /usr/local/bin, installing there.

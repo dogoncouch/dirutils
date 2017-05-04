@@ -4,6 +4,7 @@ CLI tools for executing commands in subdirectories and specified directories.
 # Commands
     inall - Execute a command in all subdirectories of the current working directory
     at - Execute a command from within a specified directory
+    follow - Execute a command at intervals (default 1 second)
 
 # Usage:
     inall [-r] [-d <depth>] <command>

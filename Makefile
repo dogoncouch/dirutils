@@ -20,7 +20,11 @@
 #_OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #_SOFTWARE.
 
+# dirutils v1.1
+
 all: install
+
+default: install
 
 install:
 	./setup.sh

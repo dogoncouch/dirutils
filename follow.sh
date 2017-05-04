@@ -23,6 +23,7 @@
 #_SOFTWARE.
 #_
 
+# dirutils v1.1
 
 usage() {
     echo "Usage: ${0##*/} [-h] [-d] [-t <seconds>] <command>"

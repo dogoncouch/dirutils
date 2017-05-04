@@ -23,7 +23,7 @@
 #_SOFTWARE.
 #_
 
-# inall v1.0
+# dirutils v1.1
 
 usage() {
     echo "Usage: ${0##*/} [-h] [-r] [-d <depth>] <command>"
