@@ -32,6 +32,7 @@ usage() {
     echo
     echo "Optional arguments:"
     echo "  -h                      Print this help message"
+}
 
 while getopts ":h" o; do
     case "${o}" in
