@@ -60,7 +60,7 @@ COMMAND="${@}"
 
 
 while true; do
-    if ${SHOWDATE}; then
+    if [ ${SHOWDATE} ]; then
         echo
         date
     fi
