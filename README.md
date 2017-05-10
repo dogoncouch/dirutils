@@ -15,7 +15,7 @@ CLI tools for executing commands in subdirectories and specified directories.
 
     follow [-h] [-d] [-t <seconds>] <command>
 
-    unsplit [-h] <outfile> <infile1> <infile2> [<infile3>] ...
+    unsplit [-h] [-z] <outfile> <infile1> <infile2> [<infile3>] ...
 
 # Installing
 See the latest instructions on the [releases page](https://github.com/dogoncouch/dirutils/releases)

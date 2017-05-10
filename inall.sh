@@ -52,7 +52,7 @@ while getopts ":rhd:" o; do
             ;;
         *)
             usage
-            exit 0
+            exit 1
             ;;
     esac
 done

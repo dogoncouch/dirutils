@@ -29,18 +29,20 @@ usage() {
     echo
     echo "Optional arguments:"
     echo "  -h                      Print this help message"
+    echo "  -z                      Unzip .gz files before adding"
 }
 
 
 
 # Set options:
-OUTFILE="unsplitfile"
-
-while getopts ":ho" o; do
+while getopts ":hz" o; do
     case "${o}" in
         h)
             usage
             exit 0
+            ;;
+        z)
+            UNZIP=1
             ;;
         *)
             usage
@@ -68,4 +70,12 @@ fi
 
 # Put our files together:
 for infile in $INFILES; do
-   cat $infile >> $OUTFILE
+    if $UNZIP; then
+        if [ ${infile: -3} == ".gz" ]; then
+            gunzip -c $infile >> $OUTFILE
+        else
+            cat $infile >> $OUTFILE
+        fi
+    else
+        cat $infile >> $OUTFILE
+    fi

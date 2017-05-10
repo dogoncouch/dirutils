@@ -3,13 +3,18 @@
 unsplit - Add files together end to end
 
 .SH SYNOPSIS
-\fBunsplit \fP[\fB-h\fP] \fI<outfile> <infile1> <infile2> [<infile3>] ...\fR
+\fBunsplit \fP[\fB-h\fP] [\fB-z\fP] \fI<outfile> <infile1> <infile2> [<infile3>] ...\fR
 
 .SH DESCRIPTION
-\fBunsplit\fP is a tool for adding files together end to end (for example, files that have been split up using the 'split' command).
+\fBunsplit\fP is a tool for adding files together end to end (for example, files that have been split using the 'split' command, or archived log files).
+
+.SH OPTIONS
+
+    \fB-h\fP                Print the help message
+    \fB-z\fP                Unzip .gz files before adding
 
 .SH EXAMPLES
-    split myfullmodule.py aaa.py aab.py aac.py
+    unsplit myfullmodule.py aaa.py aab.py aac.py
 
 .SH AUTHOR
 Dan Persons (dpersonsdev@gmail.com)
