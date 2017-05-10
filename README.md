@@ -5,6 +5,7 @@ CLI tools for executing commands in subdirectories and specified directories.
     inall - Execute a command in all subdirectories of the current working directory
     at - Execute a command from within a specified directory
     follow - Execute a command at intervals (default 1 second)
+    unsplit - Add files together end to end
 
 # Usage:
     inall [-h] [-r] [-d <depth>] <command>
@@ -13,6 +14,8 @@ CLI tools for executing commands in subdirectories and specified directories.
     at [-h] <directory> <command>
 
     follow [-h] [-d] [-t <seconds>] <command>
+
+    unsplit [-h] <outfile> <infile1> <infile2> [<infile3>] ...
 
 # Installing
 See the latest instructions on the [releases page](https://github.com/dogoncouch/dirutils/releases)
@@ -23,6 +26,7 @@ See the latest instructions on the [releases page](https://github.com/dogoncouch
     at ~/.config git init
     follow date
     follow -d -t 5 ls -l
+    unsplit myfullmodule.py aaa.py aab.py aac.py
 
 # Tips
 To get the most out of these utilities, it is best to change your bash aliases to functions. Aliases are deprecated.

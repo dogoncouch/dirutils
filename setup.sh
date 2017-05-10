@@ -30,11 +30,13 @@ if [ -w /usr/local/bin ]; then
     cp inall.sh /usr/local/bin/inall
     cp at.sh /usr/local/bin/at
     cp follow.sh /usr/local/bin/follow
+    cp unsplit.sh /usr/local/bin/unsplit
     if [ -w /usr/share/man ]; then
         echo Installing documentation
         cp doc/inall.1 /usr/share/man/man1
         cp doc/at.1 /usr/share/man/man1
         cp doc/follow.1 /usr/share/man/man1
+        cp doc/unsplit.1 /usr/share/man/man1
         mkdir -p /usr/share/doc/dirutils
         cp -n README.md /usr/share/doc/dirutils
         cp -n LICENSE /usr/share/doc/diruils
@@ -48,11 +50,13 @@ else
     cp inall.sh ~/bin/inall
     cp at.sh ~/bin/at
     cp follow.sh ~/bin/follow
+    cp unsplit.sh ~/bin/unsplit
     if [ -w /usr/share/man ];then
         echo Installing documentation
         cp doc/inall.1 /usr/share/man/man1
         cp doc/at.1 /usr/share/man/man1
         cp doc/follow.1 /usr/share/man/man1
+        cp doc/unsplit.1 /usr/share/man/man1
         mkdir -p /usr/share/doc/dirutils
         cp -n README.md /usr/share/doc/dirutils
         cp -n LICENSE /usr/share/doc/diruils
