@@ -79,3 +79,4 @@ for infile in $INFILES; do
     else
         cat $infile >> $OUTFILE
     fi
+done

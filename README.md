@@ -26,7 +26,7 @@ See the latest instructions on the [releases page](https://github.com/dogoncouch
     at ~/.config git init
     follow date
     follow -d -t 5 ls -l
-    unsplit myfullmodule.py aaa.py aab.py aac.py
+    unsplit myfullmodule.py xaa.py xab.py xac.py
 
 # Tips
 To get the most out of these utilities, it is best to change your bash aliases to functions. Aliases are deprecated.
