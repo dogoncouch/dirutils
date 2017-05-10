@@ -23,20 +23,21 @@
 #_SOFTWARE.
 #_
 
-# dirutils v1.1
+VERSION="1.2"
 
 usage() {
-    echo "Usage: ${0##*/} [-h] [-r] [-d <depth>] <command>"
+    echo "Usage: ${0##*/} [-hvr] [-d <depth>] <command>"
     echo
     echo "Optional arguments:"
     echo "  -h                      Print this help message"
+    echo "  -v                      Print the version number"
     echo "  -r                      Execute recursively"
     echo "  -d <depth>              Execute to maximum depth <depth>"
 }
 
 # Set the command line options
 MAXDEPTH=1
-while getopts ":rhd:" o; do
+while getopts ":rhvd:" o; do
     case "${o}" in
         r)
             RECURSIVE=1
@@ -48,6 +49,10 @@ while getopts ":rhd:" o; do
             ;;
         h)
             usage
+            exit 0
+            ;;
+        v)
+            echo "${0##*/}-$VERSION"
             exit 0
             ;;
         *)

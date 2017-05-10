@@ -1,5 +1,5 @@
 # dirutils
-CLI tools for executing commands in subdirectories and specified directories.
+CLI tools for command execution and directory/file manipulation.
 
 # Commands
     inall - Execute a command in all subdirectories of the current working directory
@@ -8,14 +8,14 @@ CLI tools for executing commands in subdirectories and specified directories.
     unsplit - Add files together end to end
 
 # Usage:
-    inall [-h] [-r] [-d <depth>] <command>
+    inall [-hvr] [-d <depth>] <command>
     (-r executes recursively; -d executes to a max depth)
     
-    at [-h] <directory> <command>
+    at [-hv] <directory> <command>
 
-    follow [-h] [-d] [-t <seconds>] <command>
+    follow [-hvd] [-t <seconds>] <command>
 
-    unsplit [-h] [-z] <outfile> <infile1> <infile2> [<infile3>] ...
+    unsplit [-hvz] <outfile> <infile1> <infile2> [<infile3>] ...
 
 # Installing
 See the latest instructions on the [releases page](https://github.com/dogoncouch/dirutils/releases)

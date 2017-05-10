@@ -22,7 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# dirutils v1.1
+VERSION="1.2"
 
 echo Installing dir-utils
 if [ -w /usr/local/bin ]; then

@@ -22,23 +22,28 @@
 #_OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #_SOFTWARE.
 
-# dirutils
+VERSION="1.2"
 
 usage() {
-    echo "Usage: ${0##*/} [-h] <outfile> <infile1> <infile2> [<infile3>] ..."
+    echo "Usage: ${0##*/} [-hvz] <outfile> <infile1> <infile2> [<infile3>] ..."
     echo
     echo "Optional arguments:"
     echo "  -h                      Print this help message"
+    echo "  -v                      Print the version number"
     echo "  -z                      Unzip .gz files before adding"
 }
 
 
 
 # Set options:
-while getopts ":hz" o; do
+while getopts ":hvz" o; do
     case "${o}" in
         h)
             usage
+            exit 0
+            ;;
+        v)
+            echo "${0##*/}-$VERSION"
             exit 0
             ;;
         z)

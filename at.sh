@@ -23,21 +23,26 @@
 #_SOFTWARE.
 #_
 
-# dirutils v1.1
+VERSION="1.2"
 
 # To Do: add remote host support with scp (grep for ':' to check)
 
 usage() {
-    echo "Usage: ${0##*/} [-h] <directory> <command>"
+    echo "Usage: ${0##*/} [-hv] <directory> <command>"
     echo
     echo "Optional arguments:"
     echo "  -h                      Print this help message"
+    echo "  -v                      Print the version number"
 }
 
-while getopts ":h" o; do
+while getopts ":hv" o; do
     case "${o}" in
         h)
             usage
+            exit 0
+            ;;
+        v)
+            echo "${0##*/}-$VERSION"
             exit 0
             ;;
         *)

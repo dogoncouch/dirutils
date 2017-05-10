@@ -23,13 +23,14 @@
 #_SOFTWARE.
 #_
 
-# dirutils v1.1
+VERSION="1.2"
 
 usage() {
-    echo "Usage: ${0##*/} [-h] [-d] [-t <seconds>] <command>"
+    echo "Usage: ${0##*/} [-hvd] [-t <seconds>] <command>"
     echo
     echo "Optional arguments:"
     echo "  -h                      Print this help message"
+    echo "  -v                      Print the version number"
     echo "  -d                      Show datestamps"
     echo "  -t <seconds>            Set execution interval (default 1 second)"
 }
@@ -37,7 +38,7 @@ usage() {
 # Set the command line options
 SLEEPTIME=1
 
-while getopts ":hdt:" o; do
+while getopts ":hvdt:" o; do
     case "${o}" in
         d)
             SHOWDATE=1
@@ -47,6 +48,10 @@ while getopts ":hdt:" o; do
             ;;
         h)
             usage
+            exit 0
+            ;;
+        v)
+            echo "${0##*/}-$VERSION"
             exit 0
             ;;
         *)
