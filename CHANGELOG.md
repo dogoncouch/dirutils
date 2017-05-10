@@ -1,9 +1,11 @@
 # Change log
 Change log for [dirutils](https://github.com/dogoncouch/dirutils)
 
-## [Unreleased]
+## [1.2] - 2017-05-10
 ### Added
 - 'unsplit' - add files together
+- '-v' options for all scripts
+- make target for Bourne shell install
 
 ## [1.1] - 2017-05-03
 ### Added
