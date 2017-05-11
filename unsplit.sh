@@ -67,7 +67,7 @@ INFILES="${@}"
 
 
 # Make sure output file doesn't already exist:
-if [ -f $OUTFILE ]; then
+if [ -f "$OUTFILE" ]; then
     echo "Output file already exists! Please delete it first."
     exit 1
 fi
@@ -77,11 +77,11 @@ fi
 for infile in $INFILES; do
     if $UNZIP; then
         if [ ${infile: -3} == ".gz" ]; then
-            gunzip -c $infile >> $OUTFILE
+            gunzip -c $infile >> "$OUTFILE"
         else
-            cat $infile >> $OUTFILE
+            cat $infile >> "$OUTFILE"
         fi
     else
-        cat $infile >> $OUTFILE
+        cat $infile >> "$OUTFILE"
     fi
 done
