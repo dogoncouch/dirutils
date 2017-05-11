@@ -30,7 +30,7 @@ See the latest instructions on the [releases page](https://github.com/dogoncouch
     unsplit -z /root/fullauth.log auth.log.2.gz auth.log.1 auth.log
 
 # Tips
-To get the most out of these utilities, it is best to change your bash aliases to functions. Aliases are deprecated.
+To get the most out of these utilities, it is best to change your bash aliases to functions. Functions are more suited to most applications than aliases, according to `` bash `` documentation.
 
 Replace this line in your `` ~/.bashrc `` :
     
