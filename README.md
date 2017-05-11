@@ -27,6 +27,7 @@ See the latest instructions on the [releases page](https://github.com/dogoncouch
     follow date
     follow -d -t 5 ls -l
     unsplit myfullmodule.py xaa.py xab.py xac.py
+    unsplit -z /root/fullauth.log auth.log.2.gz auth.log.1 auth.log
 
 # Tips
 To get the most out of these utilities, it is best to change your bash aliases to functions. Aliases are deprecated.
