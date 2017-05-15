@@ -6,6 +6,7 @@ CLI tools for command execution and directory/file manipulation.
     at - Execute a command from within a specified directory
     follow - Execute a command at intervals (default 1 second)
     unsplit - Add files together end to end
+    sush - Execute a multi-line command with sudo privileges
 
 # Usage:
     inall [-hvr] [-d <depth>] <command>
@@ -16,6 +17,8 @@ CLI tools for command execution and directory/file manipulation.
     follow [-hvd] [-t <seconds>] <command>
 
     unsplit [-hvz] <outfile> <infile1> <infile2> [<infile3>] ...
+
+    sush [-hv] '<commands>'
 
 # Installing
 See the latest instructions on the [releases page](https://github.com/dogoncouch/dirutils/releases)
@@ -28,6 +31,8 @@ See the latest instructions on the [releases page](https://github.com/dogoncouch
     follow -d -t 5 ls -l
     unsplit myfullmodule.py xaa.py xab.py xac.py
     unsplit -z /root/fullauth.log auth.log.2.gz auth.log.1 auth.log
+    sush 'apt update;apt upgrade'
+    sush 'whoami;uid'
 
 # Tips
 To get the most out of these utilities, it is best to change your bash aliases to functions. Functions are more suited to most applications than aliases, according to `` bash `` documentation.

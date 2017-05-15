@@ -24,39 +24,79 @@
 
 VERSION="1.2"
 
-echo Installing dir-utils
-if [ -w /usr/local/bin ]; then
-    echo Write privileges in /usr/local/bin, installing there.
-    cp inall.sh /usr/local/bin/inall
-    cp at.sh /usr/local/bin/at
-    cp follow.sh /usr/local/bin/follow
-    cp unsplit.sh /usr/local/bin/unsplit
-    if [ -w /usr/share/man ]; then
-        echo Installing documentation
-        cp doc/inall.1 /usr/share/man/man1
-        cp doc/at.1 /usr/share/man/man1
-        cp doc/follow.1 /usr/share/man/man1
-        cp doc/unsplit.1 /usr/share/man/man1
-        mkdir -p /usr/share/doc/dirutils
-        cp -n README.md /usr/share/doc/dirutils
-        cp -n LICENSE /usr/share/doc/diruils
+usage() {
+    echo "Usage: ${0##*/}"
+    echo
+    echo "Optional arguments:"
+    echo "  -h                      Print this help message"
+    echo "  -v                      Print the version number"
+    echo "  -u                      Single user install in ~/bin"
+}
+
+while getopts ":hvu" o; do
+    case "${o}" in
+        h)
+            usage
+            exit 0
+            ;;
+        v)
+            echo "${0##*/}-$VERSION"
+            exit 0
+            ;;
+        u)
+            SINGLEUSER=1
+            ;;
+        *)
+            usage
+            exit 0
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+
+
+if [ ! ${SINGLEUSER} ]; then
+
+    if [ -w /usr/local/bin ]; then
+        echo Installing dirutils in /usr/local/bin
+        cp inall.sh /usr/local/bin/inall
+        cp at.sh /usr/local/bin/at
+        cp follow.sh /usr/local/bin/follow
+        cp unsplit.sh /usr/local/bin/unsplit
+        cp sush.sh /usr/local/bin/sush
+        if [ -w /usr/share/man ]; then
+            echo Installing documentation
+            cp doc/inall.1 /usr/share/man/man1
+            cp doc/at.1 /usr/share/man/man1
+            cp doc/follow.1 /usr/share/man/man1
+            cp doc/unsplit.1 /usr/share/man/man1
+            cp doc/sush.1 /usr/share/man/man1
+            mkdir -p /usr/share/doc/dirutils
+            cp -n README.md /usr/share/doc/dirutils
+            cp -n LICENSE /usr/share/doc/diruils
+        else
+            echo Documentation not installed - no permissions in /usr/share/man
+        fi
     else
-        echo Documentation not installed - no permissions in /usr/share/man
+        echo No write privileges in /usr/local/bin. Try single user install
     fi
+
 else
-    echo No write privileges in /usr/bin:
-    echo installing in ~/bin.
+
+    echo Installing dirutils in ~/bin
     mkdir -p ~/bin
     cp inall.sh ~/bin/inall
     cp at.sh ~/bin/at
     cp follow.sh ~/bin/follow
     cp unsplit.sh ~/bin/unsplit
+    cp sush.sh ~/bin/sush
     if [ -w /usr/share/man ];then
         echo Installing documentation
         cp doc/inall.1 /usr/share/man/man1
         cp doc/at.1 /usr/share/man/man1
         cp doc/follow.1 /usr/share/man/man1
         cp doc/unsplit.1 /usr/share/man/man1
+        cp doc/sush.1 /usr/share/man/man1
         mkdir -p /usr/share/doc/dirutils
         cp -n README.md /usr/share/doc/dirutils
         cp -n LICENSE /usr/share/doc/diruils
@@ -66,4 +106,5 @@ else
     echo Note: Add ~/bin to PATH variable
     echo "(echo PATH=\$PATH:~/bin >> ~/.profile)"
     echo in ~/.profile.
+
 fi

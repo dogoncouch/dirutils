@@ -2,7 +2,7 @@
 
 #_MIT License
 #_
-#_Copyright (c) 2017 Dan Persons <dpersonsdev@gmail.com>
+#_Copyright (c) 2017 Dan Persons (dpersonsdev@gmail.com)
 #_
 #_Permission is hereby granted, free of charge, to any person obtaining a copy
 #_of this software and associated documentation files (the "Software"), to deal
@@ -21,14 +21,22 @@
 #_LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #_OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #_SOFTWARE.
-#_
+
+# FAQ
+# 1.
+#   Q. What is the point?
+#   A. Multi-line commands.
+#       This doesn't work:
+#       sudo 'apt update;apt upgrade'
+#       This does:
+#       sush 'apt update;apt upgrade'
+
 
 VERSION="1.2"
 
-# To Do: add remote host support with scp (grep for ':' to check)
 
 usage() {
-    echo "Usage: ${0##*/} [-hv] <directory> <command>"
+    echo "Usage: ${0##*/} [-hv] '<commands>'"
     echo
     echo "Optional arguments:"
     echo "  -h                      Print this help message"
@@ -54,6 +62,4 @@ done
 shift $((OPTIND-1))
 
 
-if [ -d "${1}" ]; then
-    (cd "${1}" ; shift ; "${@}");
-fi
+sudo -s sh -c "${@}"
