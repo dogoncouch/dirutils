@@ -49,3 +49,5 @@ With this:
     export -f ls
 
 Functions are the new aliases, according to bash's documentation. The `` export -f `` is what makes the function work with subscripts like inall and at.
+
+Note: `` ls `` is used in some configuration scripts and Makefiles. Exporting `` ls `` functions is not recommended for root, as it might cause some install scripts to fail.
