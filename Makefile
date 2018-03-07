@@ -30,6 +30,6 @@ install:
 	./setup.sh
 
 bourne-install:
-	sed -i 's%#!/bin/bash%#!/bin/sh%' inall.sh at.sh follow.sh setup.sh
+	sed -i 's%#!/bin/bash%#!/bin/sh%' inall.sh at.sh follow.sh sush.sh unsplit.sh setup.sh
 	./setup.sh
-	sed -i 's%#!/bin/sh%#!/bin/bash%' inall.sh at.sh follow.sh setup.sh
+	sed -i 's%#!/bin/sh%#!/bin/bash%' inall.sh at.sh follow.sh sush.sh unsplit.sh setup.sh
