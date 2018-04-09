@@ -33,21 +33,3 @@ See the latest instructions on the [releases page](https://github.com/dogoncouch
     unsplit -z /root/fullauth.log auth.log.2.gz auth.log.1 auth.log
     sush 'apt update;apt upgrade'
     sush 'whoami;uid'
-
-# Tips
-To get the most out of these utilities, it is best to change your bash aliases to functions. Functions are more suited to most applications than aliases, according to `` bash `` documentation.
-
-Replace this line in your `` ~/.bashrc `` :
-    
-    alias ls='ls --color=auto'
-
-With this:
-    
-    ls() {
-        ls --color=auto "${@}"
-    }
-    export -f ls
-
-Functions are the new aliases, according to bash's documentation. The `` export -f `` is what makes the function work with subscripts like inall and at.
-
-Note: `` ls `` is used in some configuration scripts and Makefiles. Exporting `` ls `` functions is not recommended for root, as it might cause some install scripts to fail.
