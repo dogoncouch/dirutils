@@ -22,7 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-VERSION="1.2"
+VERSION="1.3"
 
 # To Do: add remote host support with scp (grep for ':' to check)
 
