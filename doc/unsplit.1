@@ -18,6 +18,22 @@ unsplit - Add files together end to end
     unsplit myfullmodule.py xaa.py xab.py xac.py
     unsplit -z /root/fullauth.log auth.log.2.gz auth.log.1 auth.log
 
+.SH NOTES
+To get the most out of these utilities, it is best to change your bash aliases to functions. Aliases are deprecated.
+
+Replace this line in your ~/.bashrc:
+    
+    alias ls='ls --color=auto'
+
+With this:
+    
+    ls() {
+        ls --color=auto "$@"
+    }
+    export -f ls
+
+Then your aliases will work with subscripts like inall and at.
+
 .SH AUTHOR
 Dan Persons (dpersonsdev@gmail.com)
 
