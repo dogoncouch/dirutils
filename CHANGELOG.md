@@ -1,6 +1,10 @@
 # Change log
 Change log for [dirutils](https://github.com/dogoncouch/dirutils)
 
+## [Unreleased]
+### Changed
+- `inall`, `at`, `follow` now use interactive shell (to keep aliases, etc)
+
 ## [1.2] - 2017-05-10
 ### Added
 - 'unsplit' - add files together
